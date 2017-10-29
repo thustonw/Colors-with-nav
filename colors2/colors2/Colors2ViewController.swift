@@ -44,8 +44,10 @@ class Colors2ViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "color2Cell",for:indexPath)
         cell.textLabel?.text = colors[indexPath.row].name
         cell.backgroundColor = colors[indexPath.row].uiBackgroundColor
+        cell.selectionStyle = .none
         return cell
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ColorDetailViewController,
             let row = colorsTableView.indexPathForSelectedRow?.row {
